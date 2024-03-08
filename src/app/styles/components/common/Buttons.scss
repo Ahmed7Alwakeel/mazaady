@@ -1,0 +1,16 @@
+.common-button {
+    padding: .75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $linear-background;
+    gap: .5rem;
+    border-radius: 10px;
+    cursor: pointer;
+
+    span {
+        font-family: var(--bold);
+        font-size: .875rem;
+        color: $white-color;
+    }
+}
