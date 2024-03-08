@@ -7,9 +7,102 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        h2{
-            font-size: 1.25rem;
+
+        h2 {
+            font-size: 1.125rem;
             font-family: var(--bold);
+        }
+
+        .icons-container {
+            display: flex;
+            gap: .75rem;
+            cursor: pointer;
+
+            .arrow-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: $sub-grey-color;
+                cursor: pointer;
+
+                img {
+                    transition: .25s all;
+                }
+
+                &.rotate {
+                    img {
+                        transform: rotate(-180deg)
+                    }
+                }
+            }
+        }
+    }
+
+    .qr-section {
+        height: 0;
+        overflow: hidden;
+        margin-top: 0rem;
+        transition: .25s all;
+
+        .download-container {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            background-color: $sub-orange-color;
+            border-radius: 1.125rem;
+            padding: 1rem;
+
+            p {
+                font-size: .75rem;
+            }
+        }
+
+        .qr-container-wrapper {
+            background: $linear-background;
+            border-radius: 1.25rem;
+            padding: 1.25rem;
+            margin-top: 1rem;
+
+            .qr-container {
+                background: $white-color;
+                border-radius: 1.125rem;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0;
+
+                h3 {
+                    font-size: 1.25rem;
+                    font-family: var(--bold);
+                    margin-top: 1rem;
+                }
+
+                .logo-image {
+                    position: relative !important;
+                    height: 3rem !important;
+                    width: 8rem !important;
+                }
+
+                .qr-image {
+                    position: relative !important;
+                    height: 8rem !important;
+                    width: 8rem !important;
+                }
+            }
+        }
+
+        &.show {
+            height: unset;
+            margin-top: 1rem;
+
+            .download-container,
+            .qr-container-wrapper {
+                animation: fade-in .75s ease-in-out;
+            }
         }
     }
 }
@@ -17,10 +110,32 @@
 @media(min-width:1025px) {
     .home-qr-card {
         padding: 1.5rem;
+
         .title-container {
-            h2{
+            h2 {
                 font-size: 1.5rem;
             }
+
+            .icons-container {
+                .arrow-wrapper {
+                    display: none;
+                }
+            }
+        }
+
+        .qr-section {
+            height: unset !important;
         }
     }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
 }

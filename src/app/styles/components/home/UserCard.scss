@@ -27,10 +27,12 @@
             color: $grey-color;
             font-size: .875rem;
         }
-        .user-tips{
+
+        .user-tips {
             display: flex;
             gap: .5rem;
-            .tip{
+
+            .tip {
                 flex: 1;
                 display: flex;
                 align-items: center;
@@ -38,13 +40,16 @@
                 padding: 1rem .5rem;
                 border-radius: 1.25rem;
                 margin: .5rem 0;
-                img{
+
+                img {
                     margin-inline-end: .5rem;
                 }
-                p{
+
+                p {
                     font-size: .875rem;
                     font-family: var(--bold);
-                    &:last-child{
+
+                    &:last-child {
                         font-family: var(--regular);
                         color: $orange-color;
                         font-size: .75rem;
@@ -62,9 +67,11 @@
         .user-card-container {
             padding: 1.5rem;
             gap: 1rem;
-.user-tips{
-    gap: 1rem;
-}
+
+            .user-tips {
+                gap: 1rem;
+            }
+
             .user-image {
                 width: 6.5rem !important;
                 height: 6.5rem !important;
