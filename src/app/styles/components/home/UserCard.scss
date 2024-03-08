@@ -1,0 +1,79 @@
+.home-user-container {
+    flex: 1;
+
+    .user-card-container {
+        background-color: $white-color;
+        padding: 1rem;
+        border-radius: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-bottom: 1.5rem;
+
+        .user-image {
+            position: relative !important;
+            width: 5rem !important;
+            height: 5rem !important;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            font-family: var(--bold);
+        }
+
+        .user-info {
+            color: $grey-color;
+            font-size: .875rem;
+        }
+        .user-tips{
+            display: flex;
+            gap: .5rem;
+            .tip{
+                flex: 1;
+                display: flex;
+                align-items: center;
+                background-color: $sub-orange-color;
+                padding: 1rem .5rem;
+                border-radius: 1.25rem;
+                margin: .5rem 0;
+                img{
+                    margin-inline-end: .5rem;
+                }
+                p{
+                    font-size: .875rem;
+                    font-family: var(--bold);
+                    &:last-child{
+                        font-family: var(--regular);
+                        color: $orange-color;
+                        font-size: .75rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:1025px) {
+    .home-user-container {
+        flex: .5;
+
+        .user-card-container {
+            padding: 1.5rem;
+            gap: 1rem;
+.user-tips{
+    gap: 1rem;
+}
+            .user-image {
+                width: 6.5rem !important;
+                height: 6.5rem !important;
+                margin-bottom: .5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

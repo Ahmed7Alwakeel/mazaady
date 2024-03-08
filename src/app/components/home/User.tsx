@@ -5,10 +5,10 @@ import UserCard from "./UserCard"
 
 const User = () => {
 	return (
-		<>
+		<section className="home-user-container">
 			<UserCard />
 			<QRCard />
-		</>
+		</section>
 	)
 }
 

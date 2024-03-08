@@ -12,5 +12,13 @@
         font-family: var(--bold);
         font-size: .875rem;
         color: $white-color;
+        text-transform: capitalize;
+    }
+
+    &.large-font {
+        span{
+
+            font-size: 1rem;
+        }
     }
 }

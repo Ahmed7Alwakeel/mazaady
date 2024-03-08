@@ -4,9 +4,15 @@
 @import './variables.scss';
 @import './components/layout/Navbar.scss';
 @import './components/common/Buttons.scss';
+@import './components/home/HomePage.scss';
+@import './components/home/QRCard.scss';
+@import './components/home/UserCard.scss';
 
 html{
     font-size: 16px;
+}
+body{
+    font-family: var(--regular) !important;
 }
 
 @media (min-width: 1025px) {

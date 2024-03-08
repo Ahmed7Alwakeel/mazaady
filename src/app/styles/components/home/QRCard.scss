@@ -1,0 +1,26 @@
+.home-qr-card {
+    background-color: $white-color;
+    padding: 1rem;
+    border-radius: 1.5rem;
+
+    .title-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h2{
+            font-size: 1.25rem;
+            font-family: var(--bold);
+        }
+    }
+}
+
+@media(min-width:1025px) {
+    .home-qr-card {
+        padding: 1.5rem;
+        .title-container {
+            h2{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

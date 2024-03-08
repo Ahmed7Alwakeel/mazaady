@@ -1,0 +1,13 @@
+.home-page-container {
+    padding: 1.5rem $padding-inline-mobile;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (min-width:1025px) {
+    .home-page-container {
+        padding: 1rem $padding-inline-desktop;
+        flex-direction: row;
+    }
+}
