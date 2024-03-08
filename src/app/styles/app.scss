@@ -9,12 +9,20 @@
 @import './components/home/UserCard.scss';
 @import './components/home/Products.scss';
 @import './components/home/ProductCard.scss';
+@import './components/layout/SideMenu.scss';
 
-html{
+html {
     font-size: 16px;
 }
-body{
+
+body {
     font-family: var(--regular) !important;
+}
+
+.no-scroll {
+    position: fixed;
+    overflow: hidden;
+    height: 100%;
 }
 
 @media (min-width: 1025px) {

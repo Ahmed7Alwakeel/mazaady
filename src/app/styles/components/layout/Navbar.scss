@@ -1,10 +1,11 @@
 .layout {
     background-color: $website-bg;
     min-height: 100vh;
+    position: relative;
 
     .navbar-component {
         background-color: $white-color;
-        padding-inline: $padding-inline-desktop;
+        padding-inline: $padding-inline-mobile;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -17,14 +18,19 @@
             align-items: center;
             height: 100%;
 
-            img {
-                position: relative !important;
-                width: 6.5rem !important;
-                height: 2.5rem !important;
+            .logo-menu-container {
+                display: flex;
+                gap: 1rem;
+
+                .logo-container {
+                    position: relative;
+                    width: 6.5rem;
+                    height: 2.5rem;
+                }
             }
 
             ul {
-                display: flex;
+                display: none;
                 gap: 3rem;
                 height: 100%;
                 align-items: center;
@@ -70,13 +76,14 @@
             height: 100%;
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
 
             img {
                 cursor: pointer;
             }
 
             .line {
+                display: none;
                 height: 60%;
                 width: 1px;
                 background-color: $sub-orange-color;
@@ -87,6 +94,7 @@
                 display: flex;
                 align-items: center;
                 gap: .75rem;
+                display: none;
 
                 span {
                     font-family: var(--bold);
@@ -96,6 +104,44 @@
                     height: 40%;
                     width: 1px;
                     background-color: $sub-grey-color;
+                }
+            }
+
+            .common-button {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width:1025px) {
+    .layout {
+        .navbar-component {
+            padding-inline: $padding-inline-desktop;
+
+            .navbar-left-side {
+                .menu-icon {
+                    display: none;
+                }
+
+                ul {
+                    display: flex;
+                }
+            }
+
+            .navbar-right-side {
+                gap: 1.25rem;
+
+                .line {
+                    display: flex;
+                }
+
+                .locale-section {
+                    display: flex;
+                }
+
+                .common-button {
+                    display: flex;
                 }
             }
         }
