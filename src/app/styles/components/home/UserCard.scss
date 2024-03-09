@@ -70,6 +70,16 @@
 
             .user-tips {
                 gap: 1rem;
+
+                .tip {
+                    p {
+                        font-size: 1rem;
+
+                        &:last-child {
+                            font-size: .875rem;
+                        }
+                    }
+                }
             }
 
             .user-image {

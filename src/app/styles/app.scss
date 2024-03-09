@@ -2,14 +2,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import './variables.scss';
-@import './components/layout/Navbar.scss';
 @import './components/common/Buttons.scss';
+@import './components/layout/Navbar.scss';
+@import './components/layout/SideMenu.scss';
 @import './components/home/HomePage.scss';
 @import './components/home/QRCard.scss';
 @import './components/home/UserCard.scss';
 @import './components/home/Products.scss';
 @import './components/home/ProductCard.scss';
-@import './components/layout/SideMenu.scss';
+@import './components/form/FormPage.scss';
 
 html {
     font-size: 16px;
