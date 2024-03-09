@@ -55,7 +55,7 @@ const FormPage = ({ data }: any) => {
 				...new Map(data.map((item: any) => [item["id"], item])).values(),
 			])
 		} catch (error) {
-			console.log("No options form that ID")
+			console.log("No options for that ID")
 		}
 	}
 
