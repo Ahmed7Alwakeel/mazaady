@@ -3,6 +3,11 @@
     background-color: $white-color;
     padding: 1rem;
     border-radius: 1.5rem;
+    h1{
+        font-size: 1.25rem;
+        font-family: var(--bold);
+        margin-bottom: 1.5rem;
+    }
 
     form {
         .inputs-wrapper {
@@ -49,7 +54,10 @@
 @media (min-width:1025px) {
     .form-page-container {
         margin: 2rem $padding-inline-desktop;
-        padding: 1.5rem;
+        padding: 2rem;
+        h1{
+            font-size: 1.75rem;
+        }
 
         form {
             .inputs-wrapper {

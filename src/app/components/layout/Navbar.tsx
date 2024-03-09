@@ -9,6 +9,11 @@ import SideMenu from "./SideMenu"
 const Navbar = () => {
 	const pathname = usePathname()
 	const [openMenu, setOpenMenu] = useState(false)
+
+	const handleMenu = () => {
+		setOpenMenu(!openMenu)
+		document.body.classList.toggle("no-scroll")
+	}
 	return (
 		<>
 			<nav className="navbar-component">
@@ -20,10 +25,7 @@ const Navbar = () => {
 							width={24}
 							height={24}
 							className="menu-icon"
-							onClick={() => {
-								setOpenMenu(!openMenu)
-								document.body.classList.toggle("no-scroll")
-							}}
+							onClick={handleMenu}
 						/>
 						<div className="logo-container">
 							<Image src="/images/logo.svg" alt="logo" fill sizes="" />
@@ -40,20 +42,10 @@ const Navbar = () => {
 						</li>
 						<li>
 							<Link
-								className={`link ${pathname === "/form" ? "active" : ""}`}
+								className={`link ${pathname.includes("/form") ? "active" : ""}`}
 								href="/form"
 							>
 								Form
-							</Link>
-						</li>
-						<li>
-							<Link
-								className={`link ${
-									pathname === "/form-results" ? "active" : ""
-								}`}
-								href="/"
-							>
-								Form Results
 							</Link>
 						</li>
 					</ul>
@@ -88,7 +80,7 @@ const Navbar = () => {
 					</div>
 				</div>
 			</nav>
-			<SideMenu openMenu={openMenu} />
+			<SideMenu openMenu={openMenu} handleMenu={handleMenu} />
 		</>
 	)
 }

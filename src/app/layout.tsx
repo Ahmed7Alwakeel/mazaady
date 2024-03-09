@@ -1,8 +1,10 @@
+
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import localFont from "next/font/local"
 import "./styles/app.scss"
 import Navbar from "./components/layout/Navbar"
+import InnerLayout from "./InnerLayout"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -29,10 +31,12 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={`${regular.variable} ${bold.variable}`}>
 			<body className={inter.className}>
+			<InnerLayout>
 				<div className="layout">
 					<Navbar />
 					{children}
 				</div>
+			</InnerLayout>
 			</body>
 		</html>
 	)

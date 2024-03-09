@@ -7,8 +7,13 @@ import Buttons from "../common/Buttons"
 import { useEffect, useState } from "react"
 import { Value } from "sass"
 import { Category } from "@/app/controllers/categories"
+import { useDispatch } from "react-redux"
+import { setFormData } from "@/app/store/formData"
+import { useRouter } from "next/navigation"
 
 const FormPage = ({ data }: any) => {
+    const router=useRouter()
+	const dispatch = useDispatch()
 	const [categoriesOptions, setCategoriesOptions] = useState<IOptions[]>([])
 	const [optionsWithChild, setOptionsWithChild] = useState<any[]>([])
 	const [subCategoriesOptions, setSubCategoriesOptions] = useState<IOptions[]>(
@@ -34,8 +39,7 @@ const FormPage = ({ data }: any) => {
 		setCategoriesOptions([...list])
 	}, [data])
 
-
-	const handleOptionSelect = async (e: IOptions,) => {
+	const handleOptionSelect = async (e: IOptions) => {
 		try {
 			const props = await Category.getOptionsChild(`${e.id}`)
 			const data: any = [...optionsWithChild]
@@ -51,12 +55,13 @@ const FormPage = ({ data }: any) => {
 				...new Map(data.map((item: any) => [item["id"], item])).values(),
 			])
 		} catch (error) {
-			console.log(error)
+			console.log("No options form that ID")
 		}
 	}
 
 	return (
 		<div className="form-page-container">
+			<h1>Start Your Search!</h1>
 			<Formik
 				validateOnMount
 				validationSchema={validationSchema}
@@ -66,7 +71,8 @@ const FormPage = ({ data }: any) => {
 					option: { id: 0, value: "" },
 				}}
 				onSubmit={(values, { resetForm, setFieldValue }) => {
-					console.log(values)
+					dispatch(setFormData(values))
+                    router.push('/form-results')
 				}}
 			>
 				{(formik) => (
@@ -93,11 +99,11 @@ const FormPage = ({ data }: any) => {
 								inputError={!!formik.errors.subCategory}
 								inputTouched={!!formik.touched.subCategory}
 								onChange={(e) => {
-                                    Category.handleSubCategorySelect(
-                                        e,
+									Category.handleSubCategorySelect(
+										e,
 										formik,
 										setSelectedSubCategoryOptions as ([]) => {}
-                                    )
+									)
 								}}
 							/>
 							{categoriesOptions?.length > 0 &&
