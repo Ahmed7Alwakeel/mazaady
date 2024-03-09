@@ -8,7 +8,11 @@ const formDataSlice = createSlice({
     },
     reducers: { 
         setFormData: (state, action) => {
-            state.formData = action.payload
+            state.formData = Object.entries(action.payload).map(([key, value]) => {
+                if (typeof value === 'object' && value !== null && 'value' in value && value.value !== null) {
+                    return { key: key, value: value.value };
+                }
+            });
         },
     }
 })

@@ -19,7 +19,7 @@
         display: flex;
         gap: 2rem;
         flex-direction: column;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
 
         li {
             width: fit-content;
@@ -69,5 +69,8 @@
             width: 1px;
             background-color: $sub-grey-color;
         }
+    }
+    .common-button{
+        width: 100%;
     }
 }
