@@ -2,6 +2,12 @@ import { FormikProps } from "formik"
 import fetchData from "../utils/FetchData"
 
 export class Category {
+
+	static async getData () {
+		const req = await fetchData.get(`get_all_cats`)
+		return req
+	}
+
 	static async getProperties(id: string) {
 		const req = await fetchData.get(`properties?cat=${id}`)
 		return req
